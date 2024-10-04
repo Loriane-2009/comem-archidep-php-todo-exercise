@@ -21,7 +21,7 @@ if (isset($_POST['action'])) {
   switch($_POST['action']) {
 
     /**
-     * Insert a new task into the database, then redirect to the base URL.
+     * Insert a new task into the database, then redirect to the base URL.gs
      */
     case 'new':
 
@@ -44,7 +44,7 @@ if (isset($_POST['action'])) {
 
       $id = $_POST['id'];
       if(is_numeric($id)) {
-        $updateQuery = ''; // IMPLEMENT ME
+        $updateQuery = 'UPDATE todo SET done = NOT done WHERE id = '.$id; // Loriane
         if(!$db->query($updateQuery)) {
           die(print_r($db->errorInfo(), true));
         }
